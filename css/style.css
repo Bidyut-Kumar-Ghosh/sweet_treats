@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f7f4ef;
+    color: #2b2b2b;
+    line-height: 1.7;
+    overflow-x: hidden;
+    opacity: 1;
+    transition: 0.4s ease;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background: linear-gradient(135deg, #4e2a1e, #8b4513, #c97b36);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+header h1{
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+header p{
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size: 26px;
+    font-weight: 700;
+    color: #8b4513;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: #5b331f;
+    font-weight: 600;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-list li a::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #c97b36;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s ease;
+}
+
+.nav-list li a:hover::after{
+    width: 100%;
+}
+
+.nav-list li a:hover{
+    color: #c97b36;
+}
+
+/* ================= HAMBURGER ================= */
+
+.menu-toggle{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #8b4513;
+}
+
+/* ================= GLOBAL ================= */
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section{
+    padding: 80px 20px;
+}
+
+/* ================= SLIDER ================= */
+
+.slider{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.slides{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slides img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    top: 0;
+    left: 0;
+}
+
+.slide-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 90%;
+    max-width: 850px;
+}
+
+.slide-content h1{
+    font-size: 68px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.slide-content p{
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+/* ================= SLIDER BUTTONS ================= */
+
+.prev,
+.next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 15px;
+    transition: 0.3s ease;
+    z-index: 20;
+    user-select: none;
+}
+
+.prev{
+    left: 15px;
+}
+
+.next{
+    right: 15px;
+}
+
+.prev:hover,
+.next:hover{
+    color: #c97b36;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+    display: inline-block;
+    background: linear-gradient(135deg, #c97b36, #8b4513);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #8b4513, #4e2a1e);
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    background: #fffaf5;
+}
+
+.feature-box{
+    background: white;
+    width: 320px;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.feature-box:hover{
+    transform: translateY(-8px);
+}
+
+.feature-box i{
+    font-size: 45px;
+    color: #c97b36;
+    margin-bottom: 20px;
+}
+
+.feature-box h2{
+    margin-bottom: 18px;
+    color: #8b4513;
+    font-size: 24px;
+}
+
+.feature-box p{
+    color: #555;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background: #fdf7f1;
+    text-align: center;
+}
+
+.about h2{
+    font-size: 42px;
+    color: #8b4513;
+    margin-bottom: 25px;
+}
+
+.about p{
+    max-width: 850px;
+    margin: auto;
+    color: #555;
+    font-size: 17px;
+}
+
+/* ================= FORMS ================= */
+
+.feedback-section h1,
+.menu-section h1,
+.feedback-display h2{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #8b4513;
+    font-size: 42px;
+}
+
+.feedback-form{
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.search-box{
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fafafa;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus,
+.search-box:focus{
+    outline: none;
+    border-color: #c97b36;
+    background: white;
+    box-shadow: 0 0 10px rgba(201,123,54,0.2);
+}
+
+.feedback-form button{
+    width: 100%;
+    border: none;
+    background: linear-gradient(135deg, #c97b36, #8b4513);
+    color: white;
+    padding: 16px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ================= MESSAGE ================= */
+
+.message{
+    background: #e7f7ed;
+    color: #1f7a3f;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* ================= MENU CARD ================= */
+
+.menu-card{
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border-left: 6px solid #c97b36;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.menu-card:hover{
+    transform: translateY(-5px);
+}
+
+.menu-card h2{
+    color: #8b4513;
+    margin-bottom: 12px;
+}
+
+.menu-card p{
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.menu-card h3{
+    color: #c97b36;
+    font-size: 24px;
+}
+
+/* ================= FEEDBACK CARD ================= */
+
+.feedback-card{
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    border-left: 5px solid #c97b36;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.feedback-card h3{
+    color: #8b4513;
+    margin-bottom: 12px;
+}
+
+.feedback-card p{
+    color: #555;
+}
+
+.feedback-card small{
+    color: #999;
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.dashboard-card{
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.dashboard-card:hover{
+    transform: translateY(-5px);
+}
+
+.dashboard-card h2{
+    color: #8b4513;
+    margin-bottom: 15px;
+}
+
+.dashboard-card p{
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* ================= TABLE ================= */
+
+.table-container{
+    overflow-x: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td{
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+table th{
+    background: #8b4513;
+    color: white;
+}
+
+table .btn{
+    padding: 8px 15px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background: #2b2b2b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* ================= ANIMATION ================= */
+
+.feature-box,
+.menu-card,
+.feedback-card,
+.dashboard-card{
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 992px){
+
+    .slide-content h1{
+        font-size: 50px;
+    }
+
+}
+
+@media(max-width: 768px){
+
+    header h1{
+        font-size: 34px;
+    }
+
+    header p{
+        font-size: 16px;
+    }
+
+    .navbar{
+        padding: 15px 20px;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-list{
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 0;
+        gap: 22px;
+        display: none;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-list.active{
+        display: flex;
+    }
+
+    .slider{
+        height: 65vh;
+    }
+
+    .slide-content h1{
+        font-size: 42px;
+    }
+
+    .slide-content p{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .btn{
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .features{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box{
+        width: 100%;
+        max-width: 340px;
+    }
+
+}
+
+@media(max-width: 480px){
+
+    header{
+        padding: 28px 15px;
+    }
+
+    header h1{
+        font-size: 28px;
+    }
+
+    header p{
+        font-size: 14px;
+    }
+
+    .logo{
+        font-size: 20px;
+    }
+
+    .slider{
+        height: 55vh;
+    }
+
+    .slide-content{
+        width: 92%;
+    }
+
+    .slide-content h1{
+        font-size: 30px;
+    }
+
+    .slide-content p{
+        font-size: 14px;
+    }
+
+    .prev,
+    .next{
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    section{
+        padding: 60px 15px;
+    }
+
+    .feedback-form{
+        padding: 25px;
+    }
+
+    .about h2,
+    .feedback-section h1,
+    .menu-section h1{
+        font-size: 30px;
+    }
+
+}

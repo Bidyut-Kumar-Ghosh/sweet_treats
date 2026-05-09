@@ -1,0 +1,14 @@
+<?php
+
+include("../includes/auth.php");
+include("../includes/db.php");
+
+$id = $_GET['id'];
+
+$delete = "DELETE FROM menu_items WHERE id='$id'";
+
+mysqli_query($conn, $delete);
+
+header("Location: add_menu.php");
+
+?>
